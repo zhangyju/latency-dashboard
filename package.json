@@ -1,0 +1,19 @@
+{
+  "name": "latency-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time latency monitoring dashboard",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "wrangler": "^3.28.0",
+    "sql.js": "^1.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.0.0"
+  }
+}

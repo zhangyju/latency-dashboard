@@ -1,0 +1,21 @@
+name = "latency-dashboard"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "latency-dashboard"
+routes = [
+  { pattern = "latency.myzhangyujie.com/api/*", zone_name = "myzhangyujie.com" },
+  { pattern = "latency.myzhangyujie.com", zone_name = "myzhangyujie.com" }
+]
+
+[[r2_buckets]]
+binding = "LATENCY_DB"
+bucket_name = "latency-metrics"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[build]
+command = "npm run build"
